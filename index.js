@@ -13,17 +13,18 @@ const render = () => {
 };
 
 const addItem = (text) => {
-  const load = {
+  const payload = {
     text,
     isDone: false,
   };
 
-  items.push(load);
+  items.push(payload);
 };
 
 function handleSubmit(event) {
-  const { value } = event.target.elements.text;
   event.preventDefault();
+
+  const { value } = event.target.elements.text;
 
   addItem(value);
   render();
@@ -33,3 +34,5 @@ function handleSubmit(event) {
 render();
 
 refs.form.addEventListener("submit", handleSubmit);
+
+const arr = [1, 2, "jh", 7];
